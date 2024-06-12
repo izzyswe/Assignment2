@@ -1,0 +1,149 @@
+body{
+    margin: 0px;
+    background-color:#f5ebe9;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Dancing Script"
+}
+
+p,a,li,figcaption{
+    font-family: "Kanit Static";
+}
+
+/*Page Layout*/
+body{
+    display: grid;
+
+    grid-template-columns: 25% 25% 25% 25%; /*they always have to equal to 100% never less or more than 100*/
+    grid-template-rows: auto;
+    grid-template-areas: 
+                    "header header header header"
+                    "hero hero hero hero"
+                    "main main main aside"
+                    "footer footer footer footer";
+}
+
+/*header*/
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+    background-color: #f8f8f8;
+    height: 125px;
+}
+
+/** greater than is the child element and plus is something**/
+header > div{
+    width: auto;
+    height: 115px;
+}
+
+header > div > a > img{
+    width: auto;
+    height: 100%;
+}
+
+/*masthead*/
+.pizzaMasthead{
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/background.png);/*background image instead of using img tag*/
+    height: 50vh;
+}
+
+.pizzaMasthead > h1{
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    padding: 10px 10vh;
+    border-radius: 20px;
+    max-width: fit-content; /* Ensure it fits the content */
+    box-sizing: border-box;
+    margin: auto;
+    color: #f8f8f8;
+    font-size: 5em; /**5em is aorund 64px**/
+}
+
+/**main*/
+main{
+    grid-area: main;
+}
+main > section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /**percentage is good for padding*/
+    padding: 2%;
+}
+
+main > section > div{
+    padding: 2%;
+}
+
+main > section > div > img{
+    /**dealing with img one should always be auto and other should have measurement*/
+    width: 100%;
+    height: auto;
+}
+main > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+main > section + section {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+form h2 {
+    margin-top: 0;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 10px;
+} 
+
+
+/**aside are mainly use for ecommerce*/
+aside{
+    grid-area: aside;
+    grid-template-columns: 100%;
+    background-color: #ececec;
+}
+aside > article{
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+aside > article > figure > img{
+    width: 100%;
+    height: auto;
+}
